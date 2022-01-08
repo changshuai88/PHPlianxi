@@ -2,6 +2,7 @@
     namespace controllers;
 
     class BaseControllers{
+        //成功跳转
         protected function success($url,$mess){
             echo "<script>";
             echo "alert('{$mess}');";
@@ -10,7 +11,7 @@
             }
             echo "</script>";
         }
-
+        // 失败跳转
         protected function error($url,$mess){
             echo "<script>";
             echo "alert('ERROR:{$mess}');";

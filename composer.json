@@ -1,6 +1,7 @@
 {
     "require": {
-        "noahbuscher/macaw": "dev-master"
+        "noahbuscher/macaw": "dev-master",
+        "twig/twig": "^3.3"
     },
     "autoload": {
         "psr-4": {

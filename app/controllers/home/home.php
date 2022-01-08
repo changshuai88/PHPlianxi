@@ -2,6 +2,8 @@
 
 namespace home;
 
-class Home{
+use controllers\BaseControllers;
+
+class Home extends BaseControllers{
    
 }
