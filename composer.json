@@ -4,9 +4,9 @@
     },
     "autoload": {
         "psr-4": {
-            "admin\\":"app/controllers/admin/",
+            "controllers\\":"app/controllers/",
             "home\\":"app/controllers/home/",
-            "controllers\\":"app/controllers/"
+            "admin\\":"app/controllers/admin/"
         }
     }
 
