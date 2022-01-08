@@ -7,6 +7,18 @@ namespace Composer\Autoload;
 class ComposerStaticInitdccac26668f1065ff7c9873f1abe8f83
 {
     public static $prefixLengthsPsr4 = array (
+        'h' => 
+        array (
+            'home\\' => 5,
+        ),
+        'c' => 
+        array (
+            'controllers\\' => 12,
+        ),
+        'a' => 
+        array (
+            'admin\\' => 6,
+        ),
         'N' => 
         array (
             'NoahBuscher\\Macaw\\' => 18,
@@ -14,6 +26,18 @@ class ComposerStaticInitdccac26668f1065ff7c9873f1abe8f83
     );
 
     public static $prefixDirsPsr4 = array (
+        'home\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/controllers/home',
+        ),
+        'controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/controllers',
+        ),
+        'admin\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/controllers/admin',
+        ),
         'NoahBuscher\\Macaw\\' => 
         array (
             0 => __DIR__ . '/..' . '/noahbuscher/macaw',
