@@ -8,8 +8,10 @@ Macaw::get("/",function(){
     echo "1111111111111111111";
 });
 
-Macaw::get("/admin","admin\Admin@hello");
+Macaw::get("/admin","admin\Admin@index");
 Macaw::get("/add","admin\Demo@add");
+
+Macaw::get("/home","home\Test@index");
 
 
 Macaw::dispatch();

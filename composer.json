@@ -8,7 +8,11 @@
             "controllers\\":"app/controllers/",
             "home\\":"app/controllers/home/",
             "admin\\":"app/controllers/admin/"
-        }
+        },
+        "files": [
+            "app/helpers.php",
+            "config.inc.php"
+        ]
     }
 
 }
