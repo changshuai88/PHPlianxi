@@ -1,7 +1,7 @@
 <?php
 require('vendor/autoload.php');
 // require('app/controllers/admin/admin.php');
-use NoahBuscher\Macaw\Macaw;
+use \NoahBuscher\Macaw\Macaw;
 
 // echo "this is a test";
 Macaw::get("/",function(){
