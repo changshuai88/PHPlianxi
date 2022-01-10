@@ -14,6 +14,10 @@ class ComposerStaticInit62a78b24283c232ec73cc44389e1f314
     );
 
     public static $prefixLengthsPsr4 = array (
+        'm' => 
+        array (
+            'models\\' => 7,
+        ),
         'h' => 
         array (
             'home\\' => 5,
@@ -39,9 +43,17 @@ class ComposerStaticInit62a78b24283c232ec73cc44389e1f314
         array (
             'NoahBuscher\\Macaw\\' => 18,
         ),
+        'M' => 
+        array (
+            'Medoo\\' => 6,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/models',
+        ),
         'home\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/controllers/home',
@@ -69,6 +81,10 @@ class ComposerStaticInit62a78b24283c232ec73cc44389e1f314
         'NoahBuscher\\Macaw\\' => 
         array (
             0 => __DIR__ . '/..' . '/noahbuscher/macaw',
+        ),
+        'Medoo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/catfan/medoo/src',
         ),
     );
 

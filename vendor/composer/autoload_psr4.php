@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'models\\' => array($baseDir . '/app/models'),
     'home\\' => array($baseDir . '/app/controllers/home'),
     'controllers\\' => array($baseDir . '/app/controllers'),
     'admin\\' => array($baseDir . '/app/controllers/admin'),
@@ -13,4 +14,5 @@ return array(
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'NoahBuscher\\Macaw\\' => array($vendorDir . '/noahbuscher/macaw'),
+    'Medoo\\' => array($vendorDir . '/catfan/medoo/src'),
 );

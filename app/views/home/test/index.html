@@ -13,5 +13,8 @@
 </head>
 <body>
     {{ title }}
+    {% for v in data %}
+    {{ v.name }}---{{ v.money }}
+    {% endfor %}
 </body>
 </html>

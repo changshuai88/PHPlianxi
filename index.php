@@ -1,4 +1,5 @@
 <?php
+
 require('vendor/autoload.php');
 // require('app/controllers/admin/admin.php');
 use \NoahBuscher\Macaw\Macaw;

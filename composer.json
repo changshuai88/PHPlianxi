@@ -1,13 +1,15 @@
 {
     "require": {
         "noahbuscher/macaw": "dev-master",
-        "twig/twig": "^3.3"
+        "twig/twig": "^3.3",
+        "catfan/medoo": "^2.1"
     },
     "autoload": {
         "psr-4": {
             "controllers\\":"app/controllers/",
             "home\\":"app/controllers/home/",
-            "admin\\":"app/controllers/admin/"
+            "admin\\":"app/controllers/admin/",
+            "models\\":"app/models"
         },
         "files": [
             "app/helpers.php",

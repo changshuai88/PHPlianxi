@@ -1,9 +1,13 @@
 <?php
 namespace home;
 
+use models\BaseDao;
+
 class Test extends Home{
     function index(){
-        $this->assign('title','床前明月光');
+        $db = new BaseDao();
+        $data = $db->select('product','*');
+        $this->assign('data',$data);
         $this->display('test/index');
     }
 }
