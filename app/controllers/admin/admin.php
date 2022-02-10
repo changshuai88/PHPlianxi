@@ -12,4 +12,8 @@ class Admin extends BaseControllers{
         ]);    
  
     }
+
+    function index(){
+        echo "22222";
+    }
 }
