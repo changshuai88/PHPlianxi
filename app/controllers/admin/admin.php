@@ -14,6 +14,10 @@ class Admin extends BaseControllers{
     }
 
     function index(){
-        echo "22222";
+        $this->assign('name','cjs');
+        $this->assign('title','this is a test');
+
+        // print_r($this->data);
+        $this->display('index/index');
     }
 }
