@@ -12,4 +12,14 @@ class Home extends BaseControllers{
         ]);    
  
     }
+
+    protected function display($template){
+        $url =getCurUrl();
+
+        $this->assign('url',$url.'/app/views/'.TEMPNAME.'/resourse');
+        $this->assign('public',$url.'/app/views/public');
+        $this->assign('res',$url.'/uploads');
+        
+        echo $this->twig->render($template.'.html',$this->data);
+    }
 }

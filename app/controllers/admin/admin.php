@@ -13,11 +13,15 @@ class Admin extends BaseControllers{
  
     }
 
-    function index(){
-        $this->assign('name','cjs');
-        $this->assign('title','this is a test');
+    protected function display($template){
+        $url = getCurUrl();
 
-        // print_r($this->data);
-        $this->display('index/index');
+        $this->assign('url',$url.'/app/views/admin/resourse');
+        $this->assign('public',$url.'/app/views/public');
+        $this->assign('res',$url.'/uploads');
+
+        echo $this->twig->render($template.'.html',$this->data);
     }
+
+    
 }
