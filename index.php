@@ -4,6 +4,7 @@
     // require('app/controllers/admin/admin.php');
     use \NoahBuscher\Macaw\Macaw;
 
+   
    //进入管理平台的首页面
     Macaw::get('/admin',"admin\Index@index");
 
