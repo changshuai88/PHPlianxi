@@ -1,6 +1,21 @@
-.h_1 {
-  height: 100px;
+.main_01 {
+  margin-top: 10px;
+}
+.title-inline {
+  font-size: 18px;
+  font-weight: bolder;
 }
 .logo {
-  width: 100%;
+  padding: 0 17px;
+}
+.table_tou {
+  height: 40px;
+  background: gray;
+}
+.a_caozuo {
+  margin-top: 8px;
+}
+.main_02 {
+  height: 500px;
+  background: aqua;
 }
