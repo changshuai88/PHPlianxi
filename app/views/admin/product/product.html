@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="{{ url }}/bootstrap/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="{{ url }}/css/index.css">
+  <link rel="stylesheet" href="{{ url }}/css/product.css">
   <title>Document</title>
 </head>
 <body>
@@ -15,8 +16,8 @@
       	</div>
       	<div class="col-md-10 title-inline">
       		<ul class="nav nav-tabs nav-justified">
-			  <li class="active"><a href="/admin">页面管理</a></li>
-			  <li><a href="/product">产品管理</a></li>
+			  <li ><a href="/admin">页面管理</a></li>
+			  <li class="active"><a href="/product">产品管理</a></li>
 			  <li><a href="#">品牌管理</a></li>
 			  <li><a href="#">新闻管理</a></li>
 			  <li><a href="#">微信公众号</a></li>
@@ -32,25 +33,18 @@
       <div class="row">
       	<div class="col-md-2">
       		<ul class="nav nav-pills nav-stacked">
-			  <li class="active"><a href="/admin">页面管理</a></li>
-			   <li><a href="/product">产品管理</a></li>
+			  <li ><a href="/admin">页面管理</a></li>
+			   <li class="active"><a href="/product">产品管理</a></li>
 			  <li><a href="#">品牌管理</a></li>
 			  <li><a href="#">新闻管理</a></li>
 			  <li><a href="#">微信公众号</a></li>
 			  <li><a href="#">系统设置</a></li>
 			</ul>
       	</div>
-      	<div class="col-md-10 main_01 jumbotron">
-			<h1>欢迎进入管理页面</h1>
-      		<!-- <div class="col-md-4 a_caozuo">
+      	<div class="col-md-10 main_01 ">
+      		<div class="col-md-4 ">
       			<a class="btn btn-default" href="#" role="button">
-      				<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-      				全选
-      			</a>
-      			<a class="btn btn-default" href="#" role="button">
-      			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加</a>
-      			<a class="btn btn-default" href="#" role="button">
-      			<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>删除</a>
+      			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加产品</a>
       		</div>
       		<div class="col-md-4"></div>
       		<div class="col-md-4 ">
@@ -61,9 +55,38 @@
 			        <button type="submit" class="btn btn-default">搜索</button>
 			    </form>
       		</div>
-      		<div class="col-md-12 main_02">
-      			
-      		</div> -->
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <caption>产品列表</caption>
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>编号</th>
+                        <th>品名</th>
+                        <th>件号</th>
+                        <th>机型</th>
+                        <th>品牌</th>
+                        <th>上传时间</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><input type="checkbox" name="" id=""></td>
+                        <td>001</td>
+                        <td>传动轴</td>
+                        <td>23362000</td>
+                        <td>PY180</td>
+                        <td>鼎盛天工</td>
+                        <td>2022-02-19</td>
+                        <td>
+                            <a href="#">修改</a>
+                            <a href="#">删除</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
       	</div>
       </div>
 	  <div class="row footer">		  

@@ -8,6 +8,9 @@
    //进入管理平台的首页面
     Macaw::get('/admin',"admin\Index@index");
 
+    //进入产品管理页面
+    Macaw::get('/product','admin\Product@index');
+
     //进入后台登录界面
     Macaw::get('/login','admin\Login@index');
 

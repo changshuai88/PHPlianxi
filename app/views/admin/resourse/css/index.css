@@ -1,5 +1,6 @@
 .main_01 {
   margin-top: 10px;
+  height: 350px;
 }
 .title-inline {
   font-size: 18px;
@@ -8,14 +9,29 @@
 .logo {
   padding: 0 17px;
 }
-.table_tou {
-  height: 40px;
-  background: gray;
-}
-.a_caozuo {
-  margin-top: 8px;
+.denglu {
+  border-radius: 5px;
+  height: 30px;
+  background: chocolate;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  /* margin: 5px 0px; */
 }
 .main_02 {
   height: 500px;
   background: aqua;
+}
+.footer {
+  height: 150px;
+  background: #ccc;
+  /* margin: 5px 0; */
+}
+.footer div {
+  padding-top: 10px;
+  height: 100%;
+  line-height: 100%;
+  text-align: center;
+  border-left: solid 1px white;
 }
