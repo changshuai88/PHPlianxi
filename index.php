@@ -10,6 +10,8 @@
 
     //进入产品管理页面
     Macaw::get('/product','admin\Product@index');
+    Macaw::get('/add_goods','admin\Product@add_goods');
+
 
     //进入后台登录界面
     Macaw::get('/login','admin\Login@index');

@@ -9,4 +9,13 @@
 
             $this->display("product/product");
         }
+
+        function add_goods(){
+
+
+
+
+            $this->display("product/add_goods");
+
+        }
     }
