@@ -12,6 +12,10 @@
     Macaw::get('/product','admin\Product@index');
     Macaw::get('/add_goods','admin\Product@add_goods');
 
+    //进入品牌管理页面
+    Macaw::get('/category','admin\Category@index');
+    Macaw::get('/add_category','admin\Category@add_category');
+
 
     //进入后台登录界面
     Macaw::get('/login','admin\Login@index');
