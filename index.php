@@ -16,6 +16,10 @@
     Macaw::get('/category','admin\Category@index');
     Macaw::get('/add_category','admin\Category@add_category');
 
+    //进入新闻管理页面
+    Macaw::get('/news','admin\News@index');
+    Macaw::get('/add_news','admin\News@add_news');
+
 
     //进入后台登录界面
     Macaw::get('/login','admin\Login@index');
