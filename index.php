@@ -9,20 +9,20 @@
     Macaw::get('/admin',"admin\Index@index");
 
     //进入产品管理页面
-    Macaw::get('/product','admin\Product@index');
-    Macaw::get('/add_goods','admin\Product@add_goods');
+    Macaw::get('/admin/product','admin\Product@index');
+    Macaw::get('/admin/add_goods','admin\Product@add_goods');
 
     //进入品牌管理页面
-    Macaw::get('/category','admin\Category@index');
-    Macaw::get('/add_category','admin\Category@add_category');
+    Macaw::get('/admin/category','admin\Category@index');
+    Macaw::get('/admin/add_category','admin\Category@add_category');
 
     //进入新闻管理页面
-    Macaw::get('/news','admin\News@index');
-    Macaw::get('/add_news','admin\News@add_news');
+    Macaw::get('/admin/news','admin\News@index');
+    Macaw::get('/admin/add_news','admin\News@add_news');
 
 
     //进入后台登录界面
-    Macaw::get('/login','admin\Login@index');
+    Macaw::get('/admin/login','admin\Login@index');
 
     //本语句表示加载。
     Macaw::dispatch();
