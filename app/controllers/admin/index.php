@@ -5,7 +5,7 @@
 
             
 
-            $this->assign('name','cjs');
+            $this->assign('title','cjs');
 
             $this->display("index/index");
         }

@@ -2,9 +2,27 @@
   font-size: 18px;
   font-weight: bolder;
 }
-.logo {
-  padding: 0 17px;
+.header{
+  background-color: #ccc;
+  box-shadow: rgb(31, 25, 25) 0px 2px ;
+  color: chocolate;
+  font-size: 16px;
+  height: 50px;
+  /* text-align: center; */
+  justify-content: center;
+  /* flex: 1; */
 }
+.header div{
+  line-height: 50px;
+}
+.header div:last-child {
+  text-align: right;
+}
+.header img{
+  max-height: 35px;
+  margin: 0 8px;
+}
+
 .denglu {
   border-radius: 5px;
   height: 30px;
@@ -19,8 +37,8 @@
   /* height: 500px; */
   background: aqua;
 }
-.foot {
+.footer {
   padding: 10px;
-  /* background: #85794f;   */
+  background: #85794f;  
   text-align: center;
 }
