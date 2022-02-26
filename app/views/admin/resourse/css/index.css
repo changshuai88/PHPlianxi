@@ -38,6 +38,13 @@
 .main_i div:last-child{
   border-right: none;
 }
+
+.main_c caption{
+  font-size: 16px;
+  font-weight: bolder;
+  color: orange;
+  border-bottom: #85794f solid 1px;
+}
 .denglu {
   border-radius: 5px;
   height: 30px;
