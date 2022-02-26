@@ -22,7 +22,22 @@
   max-height: 35px;
   margin: 0 8px;
 }
-
+.main_i{
+  font-size: 18px;
+  font-weight:bolder;
+  list-style: none;
+  
+}
+.main_i h1{
+  margin-bottom: 30px;
+  border-bottom: solid #85794f 3px;
+}
+.main_i div{
+  border-right: #85794f 1px solid;
+}
+.main_i div:last-child{
+  border-right: none;
+}
 .denglu {
   border-radius: 5px;
   height: 30px;
