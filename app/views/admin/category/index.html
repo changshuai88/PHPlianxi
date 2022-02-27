@@ -10,17 +10,20 @@
 			</tr>
 		</thead>
 		<tbody>
+			<form action="/admin/add_category" method="post" enctype="multipart/form-data">
 			<tr>
 				<td>
-					<input type="text" placeholder="请输入品牌名称">
+					<input id="brand_name" name="brand_name" type="text" placeholder="请输入品牌名称">
 				</td>
 				<td>
-					<input type="file">
+					<input type="file"  id="brand_logo" name="brand_logo">
 				</td>
 				<td>
-					<button class="btn">添加品牌</button>
+					<input type="submit" value="添加品牌">
 				</td>
+			
 			</tr>
+		</form>
 		</tbody>
 	</table>
 	<table class="table">
@@ -42,7 +45,7 @@
 						<li>py180</li>
 						<li>PY160</li>
 						<li>PY200</li>
-						<li><span class="	glyphicon glyphicon-plus"><a href="">添加机型</a></span></li>
+						<li><span class="glyphicon glyphicon-plus"><a href="">添加机型</a></span></li>
 					</ul>
 				</td>
 

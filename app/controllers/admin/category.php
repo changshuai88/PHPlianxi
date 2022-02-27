@@ -12,10 +12,14 @@
 
         function add_category(){
 
+            // print_r($_POST);
+            print_r($_FILES);
+            $brand = [];
+            $brand["brand_name"]=$_POST["brand_name"];   
 
-
-
-            $this->display("category/add_category");
+            rename($_FILES["brand_logo"]["tmp_name"],$_FILES["brand_logo"]["name"]);
+            
+            $this->display("category/index");
 
         }
     }
