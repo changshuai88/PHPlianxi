@@ -18,9 +18,9 @@
             $brand = [];
             $brand["brand_name"]=$_POST["brand_name"]; 
             
-            upload("brand_logo",'uploads',$brand["brand_name"]);
+            $brand["path"] =  upload("brand_logo",'uploads',$brand["brand_name"]);
             
-            
+            // print_r($brand);
             $this->display("category/index");
 
         }
