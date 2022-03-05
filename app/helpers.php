@@ -68,7 +68,7 @@ function upload($fileName,$filePath,$newName){
                 // 如果 upload 目录不存在该文件则将文件上传到 upload 目录下
                 move_uploaded_file($_FILES[$fileName]["tmp_name"], $filePath ."/". $newName.$houzhui);
                 // echo "文件存储在: " . $filePath ."/". $_FILES[$fileName]["name"];
-                $newPath = $filePath ."/". $newName.$houzhui;
+                $newPath = "/". $newName.$houzhui;
                 return $newPath;
             }
         }

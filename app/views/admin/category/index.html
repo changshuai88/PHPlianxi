@@ -35,11 +35,13 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
+			{% for item in data %}
+			<tr>				
 				<td>
-					<img src="" alt="logo">
-					<span>鼎盛天工</span>
+					<img style="max-width: 50px;" src="{{ res }}{{ item.logo }}" alt="brand_logo">
+					<span>{{ item.name }}</span>
 				</td>
+				
 				<td>
 					<ul>
 						<li>py180</li>
@@ -48,9 +50,9 @@
 						<li><span class="glyphicon glyphicon-plus"><a href="">添加机型</a></span></li>
 					</ul>
 				</td>
-
+				
 			</tr>
-
+			{% endfor %}
 		</tbody>
 	</table>
 
