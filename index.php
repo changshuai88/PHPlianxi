@@ -15,6 +15,8 @@
     //进入品牌管理页面
     Macaw::get('/admin/category','admin\Category@index');
     Macaw::any('/admin/add_category','admin\Category@add_category');
+    Macaw::post('/admin/add_model/$id','admin\Category@add_model');
+
 
     //进入新闻管理页面
     Macaw::get('/admin/news','admin\News@index');

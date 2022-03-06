@@ -25,10 +25,18 @@
             
             $brand["path"] =  upload("brand_logo",'uploads',$brand["brand_name"]);
             //向数据库添加数据
-            $shangchuan->insert('brand',['name'=>$brand["brand_name"],'logo'=>$brand["path"]]);
+            if($shangchuan->insert('brand',['name'=>$brand["brand_name"],'logo'=>$brand["path"]])){
+                $this->success("category","添加成功");
+            }else{
+                $this->error("category","添加失败");
+            }
             // print_r($brand);
             $this->display("category/index");
 
+        }
+
+        function add_model($id){
+            
         }
         
 
