@@ -7,9 +7,12 @@
         function index(){
             $db = new BaseDao();
 
-            $data = $db->select("brand",["name","logo"]);           
+            $data = $db->select("brand",["id","name","logo"]);
+            $brand = $db->select("model",["pid","name"]);         
             
             $this->assign('data',$data);
+            $this->assign('brand',$brand);
+
 
             $this->display("category/index");
         }
@@ -36,7 +39,18 @@
         }
 
         function add_model($id){
-            
+            $model = new BaseDao();
+            $pid = $id;
+            $name = $_POST["model_name"];
+            print_r($pid);
+
+            if($model->insert("model",['name'=>$name,"pid"=>$pid])){
+                $this->sunccess("category","添加成功");
+            }else{
+                $this->error("category","添加失败");
+            }
+
+            $this->display("category/index");
         }
         
 
