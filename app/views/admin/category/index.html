@@ -40,7 +40,7 @@
 				<td>
 					<img style="max-width: 50px;" src="{{ res }}{{ item.logo }}" alt="brand_logo">
 					<span>{{ item.name }}</span>
-					<span>{{ item.id }}</span>
+					<span>{{ item.id }}</span>				
 				</td>
 				
 				<td>
@@ -51,7 +51,7 @@
 						{% endfor %}	
 						<form action="/admin/add_model/{{ item.id }}" method="post" enctype="multipart/form-data">
 						<li>
-							<input type="text" name="model_name" id="model" name="model">
+							<input type="text" name="model_name" id="model" >
 							<input type="submit" value="添加机型" >
 						</li>
 						</form>

@@ -33,7 +33,7 @@
         protected function success($url,$mess){
             echo "<script>";
             echo "alert('{$mess}');";
-            if(!empty($url)){
+            if(!empty($url)){               
                 echo "location.href='{$url}';";
             }
             echo "</script>";

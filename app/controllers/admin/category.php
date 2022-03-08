@@ -39,17 +39,25 @@
         }
 
         function add_model($id){
+            // $this->assign("url",$url);
             $model = new BaseDao();
             $pid = $id;
             $name = $_POST["model_name"];
-            print_r($pid);
-
-            if($model->insert("model",['name'=>$name,"pid"=>$pid])){
-                $this->sunccess("category","添加成功");
-            }else{
-                $this->error("category","添加失败");
-            }
-
+            // // print_r($pid);
+            // print_r($url);
+            // if($model->insert("model",['name'=>$_POST["model_name"],"pid"=>$id])){
+                // $this->success("category","添加成功");
+            // }else{
+            //     $this->error("category","添加失败");
+            // }
+            $model->insert("model",['name'=>$name,"pid"=>$pid]);
+            echo "<script>";
+            
+            echo "alert('添加成功！');";
+            //由于定义的成功方法不能跳转，直接使用JS赋值给location.href进行跳转
+            echo "location.href='http://lianxi.com/admin/category';";
+           
+            echo "</script>";
             $this->display("category/index");
         }
         
