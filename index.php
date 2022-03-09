@@ -22,6 +22,11 @@
     Macaw::get('/admin/news','admin\News@index');
     Macaw::get('/admin/add_news','admin\News@add_news');
 
+    //进入链接管理页面
+    Macaw::get('/admin/links','admin\Links@index');
+    Macaw::get('/admin/add_links','admin\Links@add_links');
+
+
 
     //进入后台登录界面
     Macaw::get('/admin/login','admin\Login@index');

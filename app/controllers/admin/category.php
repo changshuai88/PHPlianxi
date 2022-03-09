@@ -12,8 +12,6 @@
             
             $this->assign('data',$data);
             $this->assign('brand',$brand);
-
-
             $this->display("category/index");
         }
 
@@ -24,8 +22,7 @@
             // print_r($_FILES);
             $upfile = $_FILES;
             $brand = [];
-            $brand["brand_name"]=$_POST["brand_name"]; 
-            
+            $brand["brand_name"]=$_POST["brand_name"];            
             $brand["path"] =  upload("brand_logo",'uploads',$brand["brand_name"]);
             //向数据库添加数据
             if($shangchuan->insert('brand',['name'=>$brand["brand_name"],'logo'=>$brand["path"]])){
@@ -35,7 +32,6 @@
             }
             // print_r($brand);
             $this->display("category/index");
-
         }
 
         function add_model($id){
@@ -50,14 +46,20 @@
             // }else{
             //     $this->error("category","添加失败");
             // }
+            if($name!=""){
             $model->insert("model",['name'=>$name,"pid"=>$pid]);
-            echo "<script>";
-            
-            echo "alert('添加成功！');";
-            //由于定义的成功方法不能跳转，直接使用JS赋值给location.href进行跳转
-            echo "location.href='http://lianxi.com/admin/category';";
-           
-            echo "</script>";
+                echo "<script>";            
+                echo "alert('添加成功！');";
+                //由于定义的成功方法不能跳转，直接使用JS赋值给location.href进行跳转
+                echo "location.href='http://lianxi.com/admin/category';";           
+                echo "</script>";
+            }else{
+                echo "<script>";            
+                echo "alert('添加机型不能为空！');";
+                //由于定义的成功方法不能跳转，直接使用JS赋值给location.href进行跳转
+                echo "location.href='http://lianxi.com/admin/category';";           
+                echo "</script>";
+            }
             $this->display("category/index");
         }
         
