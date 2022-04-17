@@ -11,6 +11,10 @@
     //进入产品管理页面
     Macaw::get('/admin/product','admin\Product@index');
     Macaw::get('/admin/add_goods','admin\Product@add_goods');
+    // Macaw::any('/admin/model_goods/(:any)','admin\Product@model');
+
+    Macaw::post('/admin/update_goods','admin\Product@update_goods');
+
 
     //进入品牌管理页面
     Macaw::get('/admin/category','admin\Category@index');
@@ -29,7 +33,10 @@
 
 
     //进入后台登录界面
-    Macaw::get('/admin/login','admin\Login@index');
+    Macaw::get('/login','admin\Login@index');
 
+    
+    //进入前台界面
+    Macaw::get('/','home\Index@index');
     //本语句表示加载。
     Macaw::dispatch();

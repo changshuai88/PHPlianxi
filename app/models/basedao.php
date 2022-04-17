@@ -15,4 +15,4 @@ class BaseDao extends Medoo{
         ];
         parent::__construct($options);
     }
-}
+} 

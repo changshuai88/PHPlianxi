@@ -15,56 +15,65 @@
 		</form>
 	</div>
 	<div class="col-md-12">
-		<form class="form-horizontal" role="form">
+		<form class="form-horizontal" role="form" action="/admin/update_goods">
 			<div class="form-group">
-				<label for="firstname" class="col-sm-2 control-label">品名</label>
+				<label for="goods_name" class="col-sm-2 control-label">品名</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="firstname" placeholder="请输入品名">
+					<input type="text" class="form-control" name="goods_name" id="goods_name" placeholder="请输入品名">
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="lastname" class="col-sm-2 control-label">件号</label>
+				<label for="goods_num" class="col-sm-2 control-label">件号</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="lastname" placeholder="请输入件号">
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label for="lastname" class="col-sm-2 control-label">价格</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="lastname" placeholder="请输入价格">
+					<input type="text" class="form-control" name="goods_num" id="goods_num" placeholder="请输入件号">
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label for="lastname" class="col-sm-2 control-label">上传时间</label>
+				<label for="goods_pri" class="col-sm-2 control-label">价格</label>
 				<div class="col-sm-10">
-					<input type="date" class="form-control">
+					<input type="text" class="form-control" name="goods_pri" id="goods_pri" placeholder="请输入价格">
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label for="lastname" class="col-sm-2 control-label">品牌</label>
+				<label for="goods_addtime" class="col-sm-2 control-label">上传时间</label>
 				<div class="col-sm-10">
-					<select name="" id="" class="form-control">
-						<option value="" selected>请选择品牌</option>
-						<option value="">鼎盛天工</option>
-						<option value="">徐工</option>
-						<option value="">柳工</option>
+					<input type="date" class="form-control" name="goods_addtime" id="goods_addtime">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="goods_bid" class="col-sm-2 control-label">品牌</label>
+				<div class="col-sm-10">
+					<select name="goods_bid" id="goods_bid" class="form-control" onchange="getbid()" >
+						<option value="">请选择品牌</option>
+						{% for brand in brands %}
+						<option value="{{ brand.id }}">{{ brand.name }}</option>
+						{% endfor %}
+						<option value="">请到品牌页面添加新品牌</option> 
+						
 					</select>
+
+					
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label for="lastname" class="col-sm-2 control-label">机型</label>
+				<label for="goods_mid" class="col-sm-2 control-label">机型</label>
 				<div class="col-sm-10">
-					<select name="" id="" class="form-control">
-						<option value="" selected>请选择机型</option>
-						<option value="">PY118</option>
+					<select name="" id="goods_mid" class="form-control">
+						<option value="" >请选择机型</option>
+						<!-- <option value="">PY118</option>
 						<option value="">PY160</option>
-						<option value="">PY200</option>
+						<option value="">PY200</option> -->
+						{% for model in models %}
+					
+						<option value="{{ model.pid }}">{{ model.name }}</option>
+						
+						{% endfor %}					
 					</select>
-				</div>
+				</div>				
 			</div>
 
 			<div class="form-group">
@@ -89,4 +98,40 @@
 	</div>
 </div>
 </div>
+<div id="myDiv"></div>
+<script>
+	function getbid(){
+		var select=document.getElementById("goods_bid");
+		// console.log(bid)
+		var index = select.selectedIndex;
+		// console.log(index);
+		var bid = select.options[index].value;	
+		var xmlhttp;
+		if (window.XMLHttpRequest)
+		{
+		// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp=new XMLHttpRequest();
+		}
+		else
+		{
+		// IE6, IE5 浏览器执行代码
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange=function()
+		{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+		//这里是响应，从服务器给的反应
+		document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+		console.log(bid+"发送成功");
+		}
+		}
+
+		//这是post
+		xmlhttp.open("POST","/admin/model_goods/"+ bid,true);
+		//这是GET
+		// xmlhttp.open("GET","/try/ajax/demo_get.php",true);
+		xmlhttp.send();						
+	}
+</script>
 {% include "public/footer.html" %}
