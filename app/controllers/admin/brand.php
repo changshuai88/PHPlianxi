@@ -1,33 +1,29 @@
 <?php
-    namespace admin;
-    use models\basedao;
+namespace admin;
+use models\basedao;
+class Brand extends Admin{
 
-    class Brand extends Admin{
-
-        function index(){
-            $db = new BaseDao();
-            $arr=["请选择品牌"];
-            $brands = $db->select("model",["pid","name","id","ord"]);         
-            // print_r($brand);
-            
-            foreach($brands as $k => $v){
-                // print_r($a["pid"]);
-                $b = $a;
-                $a["pid"] == 0 ? array_push($arr,$a["name"]):null;
-
-                // $a["pid"] == $b["id"] ? 
-                // var_dump($arr);
-                // echo "<br>";
-                // return $arr;
-                
-                /* if ($a["pid"] == 0){
-                    $arr[$i] = $a["name"];
-                } */
-                
-            }
-
-            $this->assign('brands',$arr);
-            $this->display("brand/index");
+    function index(){
+        $db = new BaseDao();
+        // 获取数据库中数据，$brands
+        $brands = $db->select("model",["pid","name","id","ord"]);
+        //遍历$btands,生成二维数组。$newarr
+        print_r($brands);
+        foreach($brands as $k => $v){
+        if($v['pid']== 0){
+            $newarr[$v['id']]= $v; 
+        }elseif(isset($brands[$v["pid"]])){
+            $newarr[$v['pid']]['son'][] = $v;
         }
 
+
+        }
+        // print_r($newarr);
+        $title = "品牌管理";
+        $this->assign('title',$title);
+
+        $this->assign('brands',$newarr);
+        $this->display("brand/index");
     }
+
+}

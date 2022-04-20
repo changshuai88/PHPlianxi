@@ -3,7 +3,10 @@
 	
 {% for brand in brands %}
 
-	<p>{{ brand }}</p>
+	<span>{{ brand.name }}</span><br>
+	{% for son in brand['son'] %}
+		<span>|--{{son.name}}</span><br>
+		{% endfor%}
 {% endfor %}
 
 

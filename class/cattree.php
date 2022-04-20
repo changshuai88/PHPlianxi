@@ -1,5 +1,5 @@
 <?php
-
+// namespace tree;
 
 function get_tree_child($data, $fid) {
     $result = array();
