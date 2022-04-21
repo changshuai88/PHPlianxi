@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ url }}/js/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="{{ url }}/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="{{ url }}/css/index.css">
-    <title>{{title}}</title>
+    <title>平地机配件网->{{title}}</title>
 </head>
 
 <body>
@@ -34,11 +34,11 @@
         <div class="row">
             <div class="col-md-2 ">
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="/admin">页面管理</a></li>
-                    <li><a href="/admin/product">产品管理</a></li>
-                    <li><a href="/admin/brand">品牌管理</a></liv>
-                    <li class="active"><a href="/admin/news">新闻管理</a></li>
-                    <li><a href="/admin/links">友情链接</a></li>
-                    <li><a href="#">系统设置</a></li>
+                    <li {% if title=="页面管理" %}class="active"{% endif %}><a href="/admin">页面管理</a></li>
+                    <li {% if title=="产品管理" %}class="active"{% endif %}><a href="/admin/product">产品管理</a></li>
+                    <li {% if title=="品牌管理" %}class="active"{% endif %}><a href="/admin/brand">品牌管理</a></liv>
+                    <li {% if title=="新闻管理" %}class="active"{% endif %}><a href="/admin/news">新闻管理</a></li>
+                    <li {% if title=="友情链接" %}class="active"{% endif %}><a href="/admin/links">友情链接</a></li>
+                    <li {% if title=="系统设置" %}class="active"{% endif %}><a href="#">系统设置</a></li>
                 </ul>
             </div>

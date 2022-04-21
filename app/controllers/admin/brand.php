@@ -5,10 +5,15 @@ class Brand extends Admin{
 
     function index(){
         $db = new BaseDao();
+        // dd($db);
+        // mysqli_query($db,"set names utf8");
         // 获取数据库中数据，$brands
+        // 没有这句代码会从数据库返回的中文是？
+        $db->query("set names utf8");
         $brands = $db->select("model",["pid","name","id","ord"]);
+
         //遍历$btands,生成二维数组。$newarr
-        print_r($brands);
+        // print_r($brands);
         foreach($brands as $k => $v){
         if($v['pid']== 0){
             $newarr[$v['id']]= $v; 

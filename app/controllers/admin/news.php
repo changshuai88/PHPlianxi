@@ -4,7 +4,8 @@
         function index(){
 
             
-
+            $title = "新闻管理";
+            $this->assign('title',$title);
             $this->assign('name','cjs');
 
             $this->display("news/news");

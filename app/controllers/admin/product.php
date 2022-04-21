@@ -6,7 +6,8 @@
         function index(){
 
             
-
+            $title = "产品管理";
+            $this->assign('title',$title);
             $this->assign('name','cjs');
 
             $this->display("product/product");

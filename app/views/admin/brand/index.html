@@ -1,14 +1,45 @@
 {% include "public/header.html" %}
 <div class="col-md-10 main_c ">
 	
-{% for brand in brands %}
+<!-- {% for brand in brands %}
 
 	<span>{{ brand.name }}</span><br>
 	{% for son in brand['son'] %}
 		<span>|--{{son.name}}</span><br>
 		{% endfor%}
-{% endfor %}
+{% endfor %} -->
 
+<table class="table">
+	<tr>
+		<td colspan="4"><a href="">添加一级分类</a></td>
+	</tr>
+	<tr>
+		<td colspan="2">分类名称</td>
+		<!-- <td>&nbsp;</td> -->
+		<td>本类产品</td>
+		<td>操作</td>
+
+	</tr>
+	{% for brand in brands %}
+	<tr>
+		<td>{{ brand.name }}</td>
+		<td><a href="">添加二级分类</a></td>
+		<td>管理本分类下的1个产品</td>
+		<td><a href="">删除</a></td>
+	</tr>
+	{% for son in brand['son'] %}
+
+	<tr>
+		<td>&nbsp;|-----</td>
+		<td>{{ son.name }}</td>
+		<td>管理本分类下的1个产品</td>
+		<td><a href="">删除</a></td>
+	</tr>
+	{% endfor%}
+
+	{% endfor%}
+
+</table>
 
 </div>
 </div>

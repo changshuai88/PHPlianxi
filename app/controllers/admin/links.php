@@ -4,7 +4,8 @@
         function index(){
 
             
-
+            $title = "友情链接";
+            $this->assign('title',$title);
             $this->assign('name','cjs');
 
             $this->display("links/links");
