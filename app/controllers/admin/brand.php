@@ -31,4 +31,19 @@ class Brand extends Admin{
         $this->display("brand/index");
     }
 
+    function addbrand(){
+        print_r($_POST);
+
+        
+        // dd($db);
+        // mysqli_query($db,"set names utf8");
+        // 获取数据库中数据，$brands
+        // 没有这句代码会从数据库返回的中文是？
+        $db->query("set names utf8");
+        $brands = $db->select("model",["pid","name","id","ord"]);
+
+
+        $this->display("brand/index");
+    }
+
 }
