@@ -23,6 +23,8 @@
 					<th>编号</th>
 					<th>品名</th>
 					<th>件号</th>
+					<th>价格</th>
+					<th>重量</th>
 					<th class="hidden-xs">机型</th>
 					<th class="hidden-xs">品牌</th>
 					<th class="hidden-xs">上传时间</th>
@@ -30,19 +32,23 @@
 				</tr>
 			</thead>
 			<tbody>
+				{% for good in goods %}
 				<tr>
 					<td><input type="checkbox" name="" id=""></td>
-					<td>001</td>
-					<td>传动轴</td>
-					<td>23362000</td>
-					<td class="hidden-xs">PY180</td>
-					<td class="hidden-xs">鼎盛天工</td>
-					<td class="hidden-xs">2022-02-19</td>
+					<td>{{ good.id }}</td>
+					<td>{{ good.name }}</td>
+					<td>{{ good.partno }}</td>
+					<td class="hidden-xs">{{ good.price }}</td>
+					<td class="hidden-xs">{{ good.weight }}</td>
+					<td class="hidden-xs">{{ good.mid }}</td>
+					<td class="hidden-xs">{{ good.bid }}</td>
+					<td class="hidden-xs">{{ good.fate|date('Y-m-d') }}</td>
 					<td>
-						<a href="#">修改</a>
+						<a href="#">查看</a>
 						<a href="#">删除</a>
 					</td>
 				</tr>
+				{% endfor %}
 			</tbody>
 		</table>
 	</div>

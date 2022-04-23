@@ -5,11 +5,18 @@
     class Product extends Admin{
 
         function index(){
+            $db = new BaseDao();
+            $db->query("set names utf8");
 
+            $goods = $db->select("goods",["id","name","partno","price",'weight','date','bid','mid']);
             
             $title = "产品管理";
             $this->assign('title',$title);
-            $this->assign('name','cjs');
+            $this->assign('goods',$goods);
+
+            // $this->assign('name','cjs');
+
+
 
             $this->display("product/product");
         }
@@ -28,9 +35,7 @@
         function add_goods(){
             $db = new BaseDao();
             $db->query("set names utf8");
-
             $brands = $db->select("model",["pid","name","id","ord"]);
-
             //遍历$btands,生成二维数组。$newarr       
             foreach($brands as $k => $v){
                 if($v['pid']== 0){
@@ -39,37 +44,60 @@
                     $newarr[$v['pid']]['son'][] = $v;
                 }
             }
-            
-            print_r($_POST);
-
             $title = "产品管理";
             $this->assign('title',$title);
             $this->assign('brands',$newarr);
             $this->display("product/add_goods");
-
         }
 
         function update_goods(){
-            $update = new BaseDao();
+            $db = new BaseDao();
+            $db->query("set names utf8");
+            
             // print_r($_POST);
+            $name = @$_POST["goods_name"];
+            $partno = @$_POST["goods_num"];
+            $price = @$_POST["goods_pri"];
+            $weight =@$_POST["goods_weight"];
+            $date = @$_POST["goods_addtime"];
+            $bid= @$_POST["goods_bid"];
+            $mid = @$_POST["goods_mid"];
+            $note = @$_POST["note"];
+
+        
+            $imageName = $_POST["goods_name"].$_POST["goods_num"];
+            // print_r($imageName);
+            $imageurl = upload('image',"uploads/goods",$imageName);
+
+            // print_r($imageurl);
+            // $upfile = $_FILES;
             // print_r($_FILES);
-            $upfile = $_FILES;
-            $goods = [];
-            $goods["brand_name"]=$_POST["brand_name"];            
-            $goods["path"] =  upload("brand_logo",'uploads',$goods["brand_name"]);
-            //向数据库添加数据
-            if($update->insert('brand',['name'=>$goods["brand_name"],'logo'=>$goods["path"]])){
-                $this->success("category","添加成功");
+            // $goods = [];
+           
+            // 向数据库添加数据
+            if($db->insert('goods',[
+                'name'=>$name,
+                'partno'=>$partno,
+                'price'=>$price,
+                'weight'=>$weight,
+                'date'=>$date,
+                'bid'=>$bid,
+                'mid'=>$mid,
+                'note'=>$note,
+                'image'=>$imageurl
+                ])){
+                // echo $imageurl;
+                $this->success("add_goods","添加成功");
             }else{
-                $this->error("category","添加失败");
+                $this->error("add_goods","添加失败");
             }
 
-            $brand = $update->select("brand",["id","name"]);
-            $model = $update->select("model",["pid","name"]);       
+            // $brand = $update->select("brand",["id","name"]);
+            // $model = $update->select("model",["pid","name"]);       
 
-            $this->assign('model',$model);
-            $this->assign('brand',$brand);
-            $this->display("product/product");
+            // $this->assign('model',$model);
+            // $this->assign('brand',$brand);
+            // $this->display("product/product");
 
         }
 

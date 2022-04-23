@@ -15,7 +15,7 @@
 		</form>
 	</div>
 	<div class="col-md-12">
-		<form class="form-horizontal" role="form" action="/admin/update_goods">
+		<form class="form-horizontal" role="form" action="/admin/update_goods" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="goods_name" class="col-sm-2 control-label">品名</label>
 				<div class="col-sm-10">
@@ -56,7 +56,7 @@
 					<select name="goods_bid" id="goods_bid" class="form-control" onchange="getbid()" >
 						<option value="">请选择品牌,若没有需要的品牌，请到品牌页面添加</option>
 					{% for brand in brands %}
-						<option value="{{ brand.id }}">{{ brand.name }}</option>
+						<option value="{{ brand.name }}">{{ brand.name }}</option>
 					{% endfor %}	
 					</select>
 				</div>
@@ -65,13 +65,13 @@
 			<div class="form-group">
 				<label for="goods_mid" class="col-sm-2 control-label">机型</label>
 				<div class="col-sm-10">
-					<select name="" id="goods_mid" class="form-control">
+					<select name="goods_mid" id="goods_mid" class="form-control">
 						<option value="" >请选择机型</option>
 						
 						{% for brand in brands %}
 							{% for model in brand.son %}
 						
-						<option value="{{ model.id }}">{{ model.name }}</option>
+						<option value="{{ model.name }}">{{ model.name }}</option>
 							{% endfor %}					
 						
 						{% endfor %}					
@@ -81,14 +81,14 @@
 							
 
 			<div class="form-group">
-				<label class="col-sm-2 control-label">图片</label>
-				<input type="file" class="col-sm-10">
+				<label class="col-sm-2 control-label" for="goods_image">图片</label>
+				<input type="file" class="col-sm-10" multiple name="image" id="goods_image">
 			</div>
 
 			<div class="form-group">
-				<label for="lastname" class="col-sm-2 control-label">备注</label>
+				<label for="note" class="col-sm-2 control-label">备注</label>
 				<div class="col-sm-10">
-					<textarea class="beizhu"></textarea>
+					<textarea class="note" id="note" name="note"></textarea>
 				</div>
 			</div>
 
@@ -102,7 +102,7 @@
 	</div>
 </div>
 </div>
-<div id="myDiv"></div>
+<!-- <div id="myDiv"></div>
 <script>
 	function getbid(){
 		var select=document.getElementById("goods_bid");
@@ -137,5 +137,5 @@
 		// xmlhttp.open("GET","/try/ajax/demo_get.php",true);
 		xmlhttp.send();						
 	}
-</script>
+</script> -->
 {% include "public/footer.html" %}
