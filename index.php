@@ -23,7 +23,7 @@
     // Macaw::any('/admin/add_model/(:any)','admin\Category@add_model');
     Macaw::get('/admin/brand','admin\Brand@index');
     // 添加品牌
-    Macaw::post('/admin/addbrand','admin\Brand@addbrand');
+    Macaw::any('/admin/addbrand','admin\Brand@addbrand');
 
 
     //进入新闻管理页面

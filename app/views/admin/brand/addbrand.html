@@ -1,0 +1,40 @@
+{% include "public/header.html" %}
+<div class="col-md-10 main_c ">
+	
+<!-- {% for brand in brands %}
+
+	<span>{{ brand.name }}</span><br>
+	{% for son in brand['son'] %}
+		<span>|--{{son.name}}</span><br>
+		{% endfor%}
+{% endfor %} -->
+<!-- <button class="btn btn-link btn-default" data-toggle="modal" data-target="#myModal"><a href="/admin/addbrand">添加品牌</a></button> -->
+<form action="/admin/addbrand" method="post">
+	<input type="text" name="name" id="" placeholder="请入品牌">
+	<!-- <input type="hidden" name="pid" value="0"> -->
+	<input type="submit" value="添加品牌">
+</form>
+<table class="table">
+
+	<tr>
+		<td>品牌名称</td>
+		<!-- <td>&nbsp;</td> -->
+		<td>本类产品</td>
+		<td>操作</td>
+
+	</tr>
+	{% for brand in brands %}
+	<tr>
+		<td>{{ brand.name }}</td>
+	
+		<td>本品牌下的{{ brand.count }}个机型</td>
+		<td><a href="">删除</a></td>
+	</tr>
+	
+	{% endfor%}
+
+</table>
+
+</div>
+</div>
+{% include "public/footer.html" %}

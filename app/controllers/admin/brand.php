@@ -32,18 +32,29 @@ class Brand extends Admin{
     }
 
     function addbrand(){
-        print_r($_POST);
-
-        
-        // dd($db);
-        // mysqli_query($db,"set names utf8");
-        // 获取数据库中数据，$brands
-        // 没有这句代码会从数据库返回的中文是？
+        $title = "品牌管理";
+        // print_r($_POST);
+        $db = new BaseDao();
         $db->query("set names utf8");
-        $brands = $db->select("model",["pid","name","id","ord"]);
+        //如果上传了品牌就向数据库增加一条
+        if(@$_POST["name"]){
+            $name = $_POST["name"];
+            $brands = $db->insert("model",["pid"=>0,"name"=>$name,"ord"=>0]);
+        }else{
+            $_POST["name"] = "";
+        }         
+        //读取数据中的品牌
+        $brands = $db->select("model",['name','id'],['pid'=>0]);
+        // 为品牌增加品牌下的机型数量
+        foreach($brands as $key=>$brand){
+            $count = $db->count("model",["pid"=>$brand['id']]);
+            $brands[$key]["count"]=$count;
+        }    
 
+        $this->assign('title',$title);
+        $this->assign('brands',$brands);
 
-        $this->display("brand/index");
+        $this->display("brand/addbrand");
     }
 
 }
