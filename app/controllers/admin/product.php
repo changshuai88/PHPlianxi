@@ -102,6 +102,16 @@
         }
 
 
+        function product_show($id){
+
+
+
+            
+            $this->display("product/productshow");
+
+        }
+
+
 
        
     }

@@ -15,6 +15,8 @@
     // Macaw::any('/admin/model_goods/(:any)','admin\Product@model');
 
     Macaw::post('/admin/update_goods','admin\Product@update_goods');
+    Macaw::get('/admin/product_show/(:num)','admin\Product@product_show');
+
 
 
     //进入品牌管理页面
