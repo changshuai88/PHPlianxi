@@ -32,13 +32,12 @@
     Macaw::get('/admin/delmodel/(:num)','admin\Brand@delmodel');
 
 
-
-
-
-
     //进入新闻管理页面
     Macaw::get('/admin/news','admin\News@index');
-    Macaw::get('/admin/add_news','admin\News@add_news');
+    Macaw::any('/admin/add_news','admin\News@add_news');
+    Macaw::post('/admin/up_news','admin\News@up_news');
+    Macaw::get('/admin/del_news/(:num)','admin\News@del_news');
+
 
     //进入链接管理页面
     Macaw::get('/admin/links','admin\Links@index');

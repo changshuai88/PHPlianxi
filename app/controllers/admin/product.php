@@ -3,6 +3,7 @@
     use models\basedao;
 
     class Product extends Admin{
+
         function index(){
 
             
@@ -25,17 +26,25 @@
         } */
 
         function add_goods(){
-            $update = new BaseDao();
+            $db = new BaseDao();
+            $db->query("set names utf8");
 
+            $brands = $db->select("model",["pid","name","id","ord"]);
+
+            //遍历$btands,生成二维数组。$newarr       
+            foreach($brands as $k => $v){
+                if($v['pid']== 0){
+                    $newarr[$v['id']]= $v; 
+                }elseif(isset($brands[$v["pid"]])){
+                    $newarr[$v['pid']]['son'][] = $v;
+                }
+            }
             
+            print_r($_POST);
 
-            $brand = $update->select("brand",["id","name"]);
-            // print_r($_POST);
-            // print_r($brand[0]);
-            // print_r($model);
-
-            $this->assign('brands',$brand);
-
+            $title = "产品管理";
+            $this->assign('title',$title);
+            $this->assign('brands',$newarr);
             $this->display("product/add_goods");
 
         }

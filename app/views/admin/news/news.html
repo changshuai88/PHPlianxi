@@ -10,19 +10,19 @@
 			</tr>
 		</thead>
 		<tbody>
+			{% for new in news %}
 			<tr>
 				<td>
-					平地机长期停放方法
+					{{ new.title }}
 				</td>
 				<td>
-					2022-2-23
+					{{ new.date|date('Y-m-d') }}
 				</td>
 				<td>
-					<a href="#">修改</a>
-					<a href="#">删除</a>
+					<a href="/admin/del_news/{{ new.id }}">删除</a>
 				</td>
 			</tr>
-
+			{% endfor %}
 		</tbody>
 	</table>
 

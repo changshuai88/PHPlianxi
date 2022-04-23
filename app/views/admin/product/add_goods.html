@@ -37,6 +37,13 @@
 			</div>
 
 			<div class="form-group">
+				<label for="goods_pri" class="col-sm-2 control-label">重量</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="goods_weight" id="goods_weight" placeholder="请输入重量">
+				</div>
+			</div>
+
+			<div class="form-group">
 				<label for="goods_addtime" class="col-sm-2 control-label">上传时间</label>
 				<div class="col-sm-10">
 					<input type="date" class="form-control" name="goods_addtime" id="goods_addtime">
@@ -47,15 +54,11 @@
 				<label for="goods_bid" class="col-sm-2 control-label">品牌</label>
 				<div class="col-sm-10">
 					<select name="goods_bid" id="goods_bid" class="form-control" onchange="getbid()" >
-						<option value="">请选择品牌</option>
-						{% for brand in brands %}
+						<option value="">请选择品牌,若没有需要的品牌，请到品牌页面添加</option>
+					{% for brand in brands %}
 						<option value="{{ brand.id }}">{{ brand.name }}</option>
-						{% endfor %}
-						<option value="">请到品牌页面添加新品牌</option> 
-						
+					{% endfor %}	
 					</select>
-
-					
 				</div>
 			</div>
 
@@ -64,17 +67,18 @@
 				<div class="col-sm-10">
 					<select name="" id="goods_mid" class="form-control">
 						<option value="" >请选择机型</option>
-						<!-- <option value="">PY118</option>
-						<option value="">PY160</option>
-						<option value="">PY200</option> -->
-						{% for model in models %}
-					
-						<option value="{{ model.pid }}">{{ model.name }}</option>
+						
+						{% for brand in brands %}
+							{% for model in brand.son %}
+						
+						<option value="{{ model.id }}">{{ model.name }}</option>
+							{% endfor %}					
 						
 						{% endfor %}					
 					</select>
 				</div>				
 			</div>
+							
 
 			<div class="form-group">
 				<label class="col-sm-2 control-label">图片</label>
@@ -89,7 +93,7 @@
 			</div>
 
 
-			<div class="form-group">
+			<div class="form-group">	
 				<div class="col-sm-offset-2 col-sm-10">
 					<button type="submit" class="btn btn-default">提交</button>
 				</div>
