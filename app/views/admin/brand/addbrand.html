@@ -9,7 +9,7 @@
 		{% endfor%}
 {% endfor %} -->
 <!-- <button class="btn btn-link btn-default" data-toggle="modal" data-target="#myModal"><a href="/admin/addbrand">添加品牌</a></button> -->
-<form action="/admin/addbrand" method="post">
+<form action="/admin/addmodel" method="post">
 	<input type="text" name="name" id="" placeholder="请入品牌">
 	<!-- <input type="hidden" name="pid" value="0"> -->
 	<input type="submit" value="添加品牌">
@@ -28,7 +28,7 @@
 		<td>{{ brand.name }}</td>
 	
 		<td>本品牌下的{{ brand.count }}个机型</td>
-		<td><a href="">删除</a></td>
+		<td><a href="/admin/delbrand/{{ brand.id }}">删除</a></td>
 	</tr>
 	
 	{% endfor%}

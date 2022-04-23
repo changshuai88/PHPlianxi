@@ -24,6 +24,16 @@
     Macaw::get('/admin/brand','admin\Brand@index');
     // 添加品牌
     Macaw::any('/admin/addbrand','admin\Brand@addbrand');
+    // 删除品牌
+    Macaw::get('/admin/delbrand/(:num)','admin\Brand@delbrand');
+    //添加机型
+    Macaw::post('/admin/addmodel/(:num)','admin\Brand@addmodel');
+    // 删除机型
+    Macaw::get('/admin/delmodel/(:num)','admin\Brand@delmodel');
+
+
+
+
 
 
     //进入新闻管理页面
