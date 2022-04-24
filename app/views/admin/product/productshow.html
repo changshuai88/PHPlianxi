@@ -14,44 +14,53 @@
 			<button type="submit" class="btn btn-default">搜索</button>
 		</form>
 	</div> -->
-	<div class="col-md-12">
+	<div class="col-md-6">
 		<table class="table table-striped">
 			<caption>产品列表</caption>
-			<thead>
 				<tr>
-					<th></th>
-					<th>编号</th>
-					<th>品名</th>
-					<th>件号</th>
-					<th class="hidden-xs">价格</th>
-					<th class="hidden-xs">重量</th>
-					<th class="hidden-xs">机型</th>
-					<th class="hidden-xs">品牌</th>
-					<th class="hidden-xs">上传时间</th>
-					<th>操作</th>
+					
+					<td>品名:</th><td>{{ good.name }}</td>
 				</tr>
-			</thead>
-			<tbody>
-				{% for good in goods %}
 				<tr>
-					<td><input type="checkbox" name="" id=""></td>
-					<td>{{ good.id }}</td>
-					<td>{{ good.name }}</td>
+					<td>件号:</th>
 					<td>{{ good.partno }}</td>
-					<td class="hidden-xs">{{ good.price }}</td>
-					<td class="hidden-xs">{{ good.weight }}</td>
-					<td class="hidden-xs">{{ good.mid }}</td>
-					<td class="hidden-xs">{{ good.bid }}</td>
-					<td class="hidden-xs">{{ good.fate|date('Y-m-d') }}</td>
-					<td>
-						<a href="/admin/product_show/{{ good.id }}">查看</a>
-						<a href="#">删除</a>
-					</td>
 				</tr>
-				{% endfor %}
-			</tbody>
+				<tr>
+					<td class="hidden-xs">价格:</td>
+					<td class="hidden-xs">{{ good.price }}</td>
+
+				</tr>
+				<tr>
+					<td class="hidden-xs">重量:</td>
+					<td class="hidden-xs">{{ good.weight }}</td>
+
+				</tr>
+				<tr>
+					<td class="hidden-xs">机型:</td>
+					<td class="hidden-xs">{{ good.mid }}</td>
+
+				</tr>
+				<tr>
+					<td class="hidden-xs">品牌:</td>
+					<td class="hidden-xs">{{ good.bid }}</td>
+
+				</tr>
+
+				<tr>
+					
+					<td class="hidden-xs">上传时间:</td>
+					
+					<td class="hidden-xs">{{ good.fate|date('Y-m-d') }}</td>
+				
+				</tr>
+				
 		</table>
 	</div>
+	<div class="col-md-6">
+			<img src="{{ res }}/goods{{ good.image }}" alt="" style="width: 100%;border-radius: 5px;">
+	</div>
+
+
 </div>
 </div>
 {% include "public/footer.html" %}

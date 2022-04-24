@@ -103,11 +103,38 @@
 
 
         function product_show($id){
+            $db = new BaseDao();
+            $db->query("set names utf8");
+
+            $product = $db->select('goods',['name','partno','price','weight','date','bid','mid','note','image'],['id'=>$id]);
+            $good = $product[0];
 
 
 
-            
+            $title = "产品管理";
+            $this->assign('title',$title);
+            $this->assign('good',$good);
             $this->display("product/productshow");
+
+        }
+
+        function delgoods($id){
+            $db = new BaseDao();
+            $db->query("set names utf8");
+
+            // $del= $db->select('goods',['image'],['id'=>$id]);
+            // $path = getCurUrl().'uploads/goods'.$del[0]['image'];
+            // print_r($path);
+            // unlink($path);
+            if($db->delete('goods',[
+                'id'=>$id
+                ])){
+                
+                $this->success("/admin/product","删除成功");
+            }else{
+                $this->error("/admin/product","删除失败");
+            }
+
 
         }
 

@@ -16,6 +16,7 @@
 
     Macaw::post('/admin/update_goods','admin\Product@update_goods');
     Macaw::get('/admin/product_show/(:num)','admin\Product@product_show');
+    Macaw::get('/admin/delgoods/(:num)','admin\Product@delgoods');
 
 
 
