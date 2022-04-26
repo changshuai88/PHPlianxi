@@ -122,14 +122,13 @@
             $db = new BaseDao();
             $db->query("set names utf8");
 
-            // $del= $db->select('goods',['image'],['id'=>$id]);
-            // $path = getCurUrl().'uploads/goods'.$del[0]['image'];
-            // print_r($path);
-            // unlink($path);
+            $del= $db->select('goods',['image'],['id'=>$id]);
+           
             if($db->delete('goods',[
                 'id'=>$id
                 ])){
-                
+                //引入文件删除函数---helper.php 中
+                delimage($del[0]['image']);
                 $this->success("/admin/product","删除成功");
             }else{
                 $this->error("/admin/product","删除失败");

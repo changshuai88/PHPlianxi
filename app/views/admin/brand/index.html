@@ -25,7 +25,7 @@
 	<tr class="success">
 		<td >{{ brand.name }}</td>
 		<td></td>
-		<!-- <td>本品牌下有1个产品</td> -->
+		<td>本品牌下有{{ brand.count }}个机型</td>
 		<!-- <td><a href="">删除</a></td> -->
 	</tr>
 	{% for son in brand['son'] %}
@@ -33,7 +33,7 @@
 	<tr>
 		<td>&nbsp;|-----</td>
 		<td>{{ son.name }}</td>
-		<td>本机型下有1个产品</td>
+		<td>本机型下有{{ son.count }}个产品</td>
 		<td><a href="/admin/delmodel/{{ son.id }}">删除</a></td>
 	</tr>
 	{% endfor%}

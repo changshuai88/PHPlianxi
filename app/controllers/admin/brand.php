@@ -16,10 +16,16 @@ class Brand extends Admin{
             if($v['pid']== 0){
                 $newarr[$v['id']]= $v; 
             }elseif(isset($brands[$v["pid"]])){
+                $v["count"]=$db->count("goods",['mid'=>$v['name']]);
                 $newarr[$v['pid']]['son'][] = $v;
             }
         }
+        // 获取品牌中机型的个数
+        foreach($newarr as $k=> $v){
+            $newarr[$k]['count'] = count($v['son']);
+        }
 
+        // print_r($newarr);
         $title = "品牌管理";
         $this->assign('title',$title);
         $this->assign('brands',$newarr);
