@@ -7,14 +7,19 @@
 <body>
 	<div class="loginBox">
 		<h2>Login</h2>
-		<form action="">
+		<form action="/admin/login/dologin" method="post">
 			<div class="item">
-				<input type="text" name="" required="required">
+				<input type="text" name="name" required="required">
 				<label for="">UserName</label>
 			</div>
 			<div class="item">
-				<input type="password" name="" required="required">
+				<input type="password" name="pw" required="required">
 				<label for="">PassWord</label>
+			</div>
+			<div class="item">
+				<input type="text" name="code" required="required">
+				<label for="">请输入验证码</label>
+				<img src="/admin/login/vcode" alt="" >
 			</div>
 			<button class="btn">submit
 				<span></span>

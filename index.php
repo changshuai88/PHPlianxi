@@ -4,6 +4,7 @@
     require('class/cattree.php');
     // require('app/controllers/admin/admin.php');
     use \NoahBuscher\Macaw\Macaw;
+    session_start();
 
    
    //进入管理平台的首页面
@@ -49,7 +50,15 @@
 
 
     //进入后台登录界面
-    Macaw::get('/login','admin\Login@index');
+    // Macaw::get('/login','admin\Login@index');
+    // 管理员登录和退出操作 *---路由文件
+    Macaw::get('/admin/login','admin\Login@index');
+    //管理员登录页面的验证码
+    Macaw::get('/admin/login/vcode','admin\Login@vcode');
+    // 验证用户名和密码
+    Macaw::post('/admin/login/dologin','admin\Login@dologin');
+    // 退出登录
+    Macaw::get('/admin/login/logout','admin\Login@logout');
 
     
     //进入前台界面

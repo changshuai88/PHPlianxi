@@ -86,3 +86,8 @@ function upload($fileName,$filePath,$newName){
             unlink($path);
         }
     }
+
+    function ew_login($utype){
+        	return md5($_SESSION['id'].$_SERVER['HTTP_HOST']) == $_SESSION[$utype.'_token']? 1 : 0; 
+        }
+        

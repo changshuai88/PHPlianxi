@@ -11,8 +11,11 @@ return array(
     'controllers\\' => array($baseDir . '/app/controllers'),
     'admin\\' => array($baseDir . '/app/controllers/admin'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
+    'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
+    'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
     'NoahBuscher\\Macaw\\' => array($vendorDir . '/noahbuscher/macaw'),
     'Medoo\\' => array($vendorDir . '/catfan/medoo/src'),
+    'Gregwar\\' => array($vendorDir . '/gregwar/captcha/src/Gregwar'),
 );

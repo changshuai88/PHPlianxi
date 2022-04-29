@@ -9,7 +9,12 @@ class Admin extends BaseControllers{
         $loader = new \Twig\Loader\FilesystemLoader(TEMPDIR.'/app/views/admin');
         $this->twig = new \Twig\Environment($loader,[
             //    'cache' => '/path/to/compilatation_cache',
-        ]);    
+        ]);  
+        
+        $this->assign('version',$_SESSION);
+        if(!ew_login('admin')){
+            $this->error("/admin/login","你还没有登录，请登录...");
+        }
  
     }
 

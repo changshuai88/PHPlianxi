@@ -2,7 +2,8 @@
     "require": {
         "noahbuscher/macaw": "dev-master",
         "twig/twig": "^3.3",
-        "catfan/medoo": "^2.1"
+        "catfan/medoo": "^2.1",
+        "gregwar/captcha": "^1.1"
     },
     "autoload": {
         "psr-4": {
