@@ -1,20 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body{
-            background: gold;
-        }
-    </style>
-    <title>{{ title }}</title>
+   <meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Bootstrap 实例 - 响应式的列重置</title>
+   <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">  
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+   <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+   <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+   <!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+
+   <style>
+   		#logo{
+   			height: 80px;
+   		}
+
+   		.header{
+
+   			background: #FD9800;
+   			font-size: 18px;
+   			font-weight: bolder;
+   			margin-bottom: 2px;
+   			box-shadow: 0 2px 2px #ccc;
+
+   		}
+   		.headtitle{
+   			margin-top: 20px;
+   			display:none;
+   		}
+   		
+   		.right{
+   			text-align: right;
+   			/*padding-top: 20px;*/
+   		}
+   	
+
+   		.carousel,
+		.carousel img {
+		    width: 100%;
+		    height: 300px !important;
+		}
+		.banner{
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		.product{
+
+		}
+		.ptitle{
+			background: #FD9800;
+			font-family:微软雅黑;
+			font-size:32px;
+			line-height:44.8px;
+			white-space:normal;
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+		.ptitle span{
+			margin:0px;
+			padding:0px;
+			line-height:44.8px;
+			color:red;
+		}
+		.pcontent{
+			padding-top: 10px;
+			background: #F8F9FA;
+		}
+		.pcontent a{
+			text-decoration: 0;
+			color: black;
+			font-weight: bolder;
+		}
+		.pcontent img{
+			width: 100%;
+			border-radius: 5px;
+
+
+		}
+		.webfooter{
+			margin-top: 5px;
+			padding: 10px;
+		}
+   </style>
 </head>
 <body>
-    {{ title }}
-    {% for v in data %}
-    {{ v.name }}---{{ v.money }}
-    {% endfor %}
+
+<div class="container">
+	<!-- logo和电话 -->
+   <div class="row header " >
+
+	    <div class="col-lg-4 ">
+	        <img id="logo" src="./images/logo.jpg" alt="">
+	    </div>
+	    <div class="col-lg-4 text-center headtitle">
+	    	<h2><strong>专业天工平地机配件</strong></h2>
+	    </div>
+	    <div class="col-lg-4 right headtitle">
+	        <h2><span><img src="/images/telephone.svg" alt="Bootstrap" width="30" height="30">&nbsp;<strong>18222122805</strong> &nbsp; </span></h2>
+	    </div>	  	    
+   </div>
+   <!-- 导航栏 -->
+   <div class="row header ">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <div class="container-fluid">
+		    <a class="navbar-brand" href="#">VOTAI</a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		        <li class="nav-item">
+		          <a class="nav-link active" aria-current="page" href="#">首页</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" href="#">维修知识</a>
+		        </li>
+		        <li class="nav-item dropdown">
+		          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		            产品中心
+		          </a>
+		          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+		            <li><a class="dropdown-item" href="#">天工</a></li>
+		            <li><a class="dropdown-item" href="#">徐工</a></li>
+		            <li><hr class="dropdown-divider"></li>
+		            <li><a class="dropdown-item" href="#">Something else here</a></li>
+		          </ul>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link ">小工具</a>
+		        </li>
+		      </ul>
+		      <form class="d-flex" role="search">
+		        <input class="form-control me-2" type="search" placeholder="请输入件号或者名称" aria-label="Search">
+		        <button class="btn btn-outline-warning" type="submit">Search</button>
+		      </form>
+		    </div>
+		  </div>
+		</nav>
+   
+
+   </div>
+
+
+</div>
+<!-- 轮播图 -->
+<div class="container banner">
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+		   <!-- 指示符 -->
+		  <div class="carousel-indicators">
+		    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+		    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+		    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+		  </div>
+		  
+		  <!-- 轮播图片 -->
+		  <div class="carousel-inner">
+		    <div class="carousel-item active">
+		      <img src="./images/1.jpeg" class="d-block" style="width:100%">
+		    </div>
+		    <div class="carousel-item">
+		      <img src="./images/2.jpeg" class="d-block" style="width:100%">
+		    </div>
+		    <div class="carousel-item">
+		      <img src="./images/3.jpeg" class="d-block" style="width:100%">
+		    </div>
+		  </div>
+		  
+		  <!-- 左右切换按钮 -->
+		  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+		    <span class="carousel-control-prev-icon"></span>
+		  </button>
+		  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+		    <span class="carousel-control-next-icon"></span>
+		  </button>
+		</div>
+</div>	
+
+<!-- 最新产品 -->
+<div class="container product">
+	<!-- 最新产品标题 -->
+	<div class="row ptitle">
+		<div class="col-12 text-center"><strong>---&nbsp;最新<span>产品</span>&nbsp;---</strong></div>
+	</div>	
+	<!-- 最新产品内容 -->
+	<div class="row pcontent">
+		<div class="col-xxl-3 col-12 pcontent text-center">
+			<img src="./images/1.jpeg" alt=""><br>
+			<span><a href="">第一个产品</a></span><br>
+			<span><a href="">22331122</a></span>
+		</div>
+		<div class="col-xxl-3 col-12 pcontent text-center">
+			<img src="./images/1.jpeg" alt=""><br>
+			<span><a href="">第一个产品</a></span><br>
+			<span><a href="">22331122</a></span>
+		</div>
+		<div class="col-xxl-3 col-12 pcontent text-center">
+			<img src="./images/1.jpeg" alt=""><br>
+			<span><a href="">第一个产品</a></span><br>
+			<span><a href="">22331122</a></span>
+		</div>
+		<div class="col-xxl-3 col-12 pcontent text-center">
+			<img src="./images/1.jpeg" alt=""><br>
+			<span><a href="">第一个产品</a></span><br>
+			<span><a href="">22331122</a></span>
+		</div>
+		<div class="col-xxl-3 col-12 pcontent text-center">
+			<img src="./images/1.jpeg" alt=""><br>
+			<span><a href="">第一个产品</a></span><br>
+			<span><a href="">22331122</a></span>
+		</div>
+		<div class="col-xxl-3 col-12 pcontent text-center">
+			<img src="./images/1.jpeg" alt=""><br>
+			<span><a href="">第一个产品</a></span><br>
+			<span><a href="">22331122</a></span>
+		</div>
+		<div class="col-xxl-3 col-12 pcontent text-center">
+			<img src="./images/1.jpeg" alt=""><br>
+			<span><a href="">第一个产品</a></span><br>
+			<span><a href="">22331122</a></span>
+		</div>
+		<div class="col-xxl-3 col-12 pcontent text-center">
+			<img src="./images/1.jpeg" alt=""><br>
+			<span><a href="">第一个产品</a></span><br>
+			<span><a href="">22331122</a></span>
+		</div>
+	</div>
+</div>
+
+<!-- 维修知识 -->
+<div class="container">
+	<div class="row ptitle">
+		<div class="col-12 text-center"><strong>---&nbsp;维修<span>知识</span>&nbsp;---</strong></div>
+		<!-- <div class="col-12 text-center text-capitalize"><strong>---&nbsp;repair<span>&nbsp;knowledge</span>&nbsp;---</strong></div> -->
+
+	</div>
+
+	<div class="row ">
+		 <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+		    <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> -->
+		    <div class="d-flex gap-2 w-100 justify-content-between">
+		      <div>
+		        <h6 class="mb-0">Third heading<p>
+		        <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
+		      </div>
+		      <small class="opacity-50 text-nowrap">1w</small>
+		    </div>
+		  </a>
+		  <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+		    <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> -->
+		    <div class="d-flex gap-2 w-100 justify-content-between">
+		      <div>
+		        <h6 class="mb-0">Third heading<p>
+		        <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
+		      </div>
+		      <small class="opacity-50 text-nowrap">1w</small>
+		    </div>
+		  </a>
+	</div>
+
+
+</div>
+
+<!-- footer -->
+<div class="container bg-dark text-white webfooter">
+	<div class="row">
+	<div class="col-xxl-6 col-12  text-center">
+		<p><span>联系人：常先生</span>&nbsp;<strong>QQ:2115301754</strong></p>
+		<p>地址：天津市西青区中北工业园南园红运路11号院内<p>
+	</div>
+	<div class="col-xxl-6 col-12  text-center" style="border-left: 2px solid #FD9800;">
+		<img src="./images/weixin.jpg" alt="平地机配件微信" style="height:80px;">&nbsp;&nbsp;&nbsp;
+		<!-- 打开微信模态框的按钮 -->
+		<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#myModal">
+		<i class="bi bi-arrows-fullscreen"></i>
+		</button>
+ 
+ 
+			<!-- 微信模态框 -->
+			<div class="modal" id="myModal">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			 
+			      <!-- 模态框内容 -->
+			      <div class="modal-body">
+			       <img src="./images/weixin.jpg" alt="平地机配件微信" style="width: 100%;">
+			      </div>
+			 
+			      <!-- 模态框底部 -->
+			      <div class="modal-footer" style="color:#FD9800;">
+			      	<span>请添加微信，我会尽快通过。</span>
+			        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+			      </div>
+			 
+			    </div>
+			  </div>
+			</div>
+		
+	</div>
+</div>
+</div>
+
+<script>
+	$(document).ready(
+    	function myFunction(){
+		    setTimeout(function(){$('.headtitle').fadeIn("slow")},2000);
+		})
+    
+    $('.carousel').carousel({
+        interval: 2000
+    })
+
+   
+
+
+
+</script>
 </body>
 </html>
