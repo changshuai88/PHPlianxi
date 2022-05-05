@@ -1,0 +1,56 @@
+<!-- footer -->
+<div class="container bg-dark text-white webfooter">
+	<div class="row">
+	<div class="col-xxl-4 col-xl-4 col-12  text-center " style="font-size: 14px;">
+		<p><span>联系人：常先生</span>&nbsp;<strong>QQ:2115301754</strong></p>
+		<p>地址：天津市西青区中北工业园南园红运路11号院内<p>
+	</div>
+	<div class="col-xxl-4 col-xl-4 col-12  text-center" style="border-left: 2px solid #FD9800;">
+		
+	</div>
+	<div class="col-xxl-4 col-xl-4 col-12  text-center" style="border-left: 2px solid #FD9800;">
+		<img src="{{res}}/wechat.jpg" alt="平地机配件微信" style="height:70px;">&nbsp;&nbsp;&nbsp;
+		<!-- 打开微信模态框的按钮 -->
+		<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#myModal">
+		<i class="bi bi-arrows-fullscreen"></i>
+		</button>
+ 
+ 
+			<!-- 微信模态框 -->
+			<div class="modal" id="myModal">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			 
+			      <!-- 模态框内容 -->
+			      <div class="modal-body">
+			       <img src="{{res}}/wechat.jpg" alt="平地机配件微信" style="width: 100%;">
+			      </div>
+			 
+			      <!-- 模态框底部 -->
+			      <div class="modal-footer" style="color:#FD9800;">
+			      	<span>请添加微信，我会尽快通过。</span>
+			        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+			      </div>
+			 
+			    </div>
+			  </div>
+			</div>
+		
+	</div>
+</div>
+</div>
+
+<script>
+	$(document).ready(
+    	function myFunction(){
+		    setTimeout(function(){$('.headtitle').fadeIn("slow")},2000);
+		})
+    
+    $('.carousel').carousel({
+        interval: 2000
+    })
+
+ 
+</script>
+</body>
+</html>

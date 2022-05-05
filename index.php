@@ -63,5 +63,12 @@
     
     //进入前台界面
     Macaw::get('/','home\Index@index');
+    // 产品展示页面
+    Macaw::get('/product','home\Product@index');
+
+    Macaw::get('/repaire','home\Repaire@index');
+
+    
+
     //本语句表示加载。
     Macaw::dispatch();
