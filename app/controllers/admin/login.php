@@ -9,7 +9,7 @@
    
        function index(){
 
-        // $pw = md5(md5(ew_admin));
+        // $pw = md5(md5(ew_shuai888));
         // dd($pw);
         $url = getCurUrl();
 
