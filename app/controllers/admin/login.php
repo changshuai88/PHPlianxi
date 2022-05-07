@@ -64,6 +64,6 @@
    
            session_destroy();
    
-           $this->success("/admin/login","管理员退出");
+           $this->success("/","管理员退出");
        }
    }

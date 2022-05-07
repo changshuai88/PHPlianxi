@@ -8,15 +8,19 @@
 	</div>	
 	<!-- 最新产品内容 -->
 	<div class="row pcontent">
-		{% for good in goods %}
-		<div class="col-xxl-3 col-xl-3 col-12 pcontent text-center">
-			<a href="/good/{{ good.id }}">
+		<div class="col-xxl-6 col-xl-6 col-12 pcontent text-right">
 			<img src="{{res}}/goods/{{good.image}}" alt=""><br>
-			<span>{{ good.name }}</span><br>
-			<span>{{ good.partno }}</span>
-		</a>
+		
 		</div>
-		{% endfor %}
+		<div class="col-xxl-6 col-xl-6 col-12 pcontent text-right">
+			<h2>{{ good.name }}--{{ good.partno }}</h2>
+			<hr>
+			<span>机型：{{ good.bid }}--{{ good.mid }}</span><br>
+			<span>重量：{{ good.weight }}KG</span><br>
+			<span>日期：{{ good.date|date('Y-m-d')  }}</span>
+
+		</div>
+		
 		
 	</div>
 </div>

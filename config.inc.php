@@ -10,4 +10,4 @@ define("PASS",'');
 define("DBNAME",'ewshop');
 define("TABPREFIX",'ew_');
 //分页数量
-define('PNUM',10);
+define('PNUM',8);
