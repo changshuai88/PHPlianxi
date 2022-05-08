@@ -32,11 +32,12 @@
             $db->query("set names utf8");
             $title = @$_POST["title"];
             $date = @$_POST["date"];
-            $article = @$_POST["title"];
+            $article = @$_POST["article"];
+            $note = @$_POST["note"];
 
 
             if($title && $date && $article){
-                $db->insert('news',["title"=>$title,"date"=>$date,"article"=>$article]);
+                $db->insert('news',["title"=>$title,"date"=>$date,"article"=>$article,'spare'=>$note,'readtimes'=>0]);
                    
                 //    $brands = $db->insert("model",["pid"=>$id,"name"=>$name,"ord"=>0]);
                     // success('brand/index',"添加成功");

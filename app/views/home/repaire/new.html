@@ -1,0 +1,24 @@
+{% include "public/header.html" %}	
+
+<!-- 维修知识 -->
+
+<div class="container">
+    <div class="row ptitle">
+		<div class="col-12 text-center"><strong>---&nbsp;维修<span>知识</span>&nbsp;---</strong></div>
+		<!-- <div class="col-12 text-center text-capitalize"><strong>---&nbsp;repair<span>&nbsp;knowledge</span>&nbsp;---</strong></div> -->
+
+	</div>
+
+	<div class="row ">
+		 <div class="col-12 text-center"><h2>{{ new.title }}</h2></div>
+		 <hr>
+		 {% autoescape false %}
+		 <p class="text-center">{{ new.article }}</p>
+		 {% endautoescape %}
+
+	</div>
+
+</div>
+
+
+{% include "public/footer.html" %}

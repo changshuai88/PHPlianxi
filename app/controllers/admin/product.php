@@ -84,7 +84,8 @@
                 'bid'=>$bid,
                 'mid'=>$mid,
                 'note'=>$note,
-                'image'=>$imageurl
+                'image'=>$imageurl,
+                'readtime'=>0
                 ])){
                 // echo $imageurl;
                 $this->success("add_goods","添加成功");

@@ -66,9 +66,12 @@
     // 产品展示页面
     Macaw::get('/product','home\Product@index');
     Macaw::get('/good/(:num)','home\Product@good');
+    Macaw::post('/search','home\Product@search');
 
 
     Macaw::get('/repaire','home\Repaire@index');
+    Macaw::get('/knowledge/(:num)','home\Repaire@knowledge');
+
 
     
 

@@ -8,46 +8,16 @@
 	</div>	
 	<!-- 最新产品内容 -->
 	<div class="row pcontent">
+		{% for good in goods %}
 		<div class="col-xxl-3 col-xl-3 col-12 pcontent text-center">
-			<img src="{{res}}/goods/连轮轴2205552122.png" alt=""><br>
-			<span><a href="">第一个产品</a></span><br>
-			<span><a href="">22331122</a></span>
+			<a href="/good/{{ good.id }}">
+			<img src="{{res}}/goods/{{good.image}}" alt=""><br>
+			<span>{{ good.name }}</span><br>
+			<span>{{ good.partno }}</span>
+		</a>
 		</div>
-		<div class="col-xxl-3 col-xl-3 col-12 pcontent text-center">
-			<img src="./images/1.jpeg" alt=""><br>
-			<span><a href="">第一个产品</a></span><br>
-			<span><a href="">22331122</a></span>
-		</div>
-		<div class="col-xxl-3 col-xl-3 col-12 pcontent text-center">
-			<img src="./images/1.jpeg" alt=""><br>
-			<span><a href="">第一个产品</a></span><br>
-			<span><a href="">22331122</a></span>
-		</div>
-		<div class="col-xxl-3 col-xl-3 col-12 pcontent text-center">
-			<img src="./images/1.jpeg" alt=""><br>
-			<span><a href="">第一个产品</a></span><br>
-			<span><a href="">22331122</a></span>
-		</div>
-		<div class="col-xxl-3 col-xl-3 col-12 pcontent text-center">
-			<img src="./images/1.jpeg" alt=""><br>
-			<span><a href="">第一个产品</a></span><br>
-			<span><a href="">22331122</a></span>
-		</div>
-		<div class="col-xxl-3 col-xl-3 col-12 pcontent text-center">
-			<img src="./images/1.jpeg" alt=""><br>
-			<span><a href="">第一个产品</a></span><br>
-			<span><a href="">22331122</a></span>
-		</div>
-		<div class="col-xxl-3 col-xl-3 col-12 pcontent text-center">
-			<img src="./images/1.jpeg" alt=""><br>
-			<span><a href="">第一个产品</a></span><br>
-			<span><a href="">22331122</a></span>
-		</div>
-		<div class="col-xxl-3 col-xl-3 col-12 pcontent text-center">
-			<img src="./images/1.jpeg" alt=""><br>
-			<span><a href="">第一个产品</a></span><br>
-			<span><a href="">22331122</a></span>
-		</div>
+		{% endfor %}
+		
 	</div>
 </div>
 
@@ -60,26 +30,19 @@
 	</div>
 
 	<div class="row ">
-		 <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-		    <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> -->
-		    <div class="d-flex gap-2 w-100 justify-content-between">
-		      <div>
-		        <h6 class="mb-0">Third heading<p>
-		        <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-		      </div>
-		      <small class="opacity-50 text-nowrap">1w</small>
-		    </div>
-		  </a>
-		  <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-		    <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> -->
-		    <div class="d-flex gap-2 w-100 justify-content-between">
-		      <div>
-		        <h6 class="mb-0">Third heading<p>
-		        <p class="mb-0 opacity-75">Some placeholder content in a paragraph.</p>
-		      </div>
-		      <small class="opacity-50 text-nowrap">1w</small>
-		    </div>
-		  </a>
+		{% for new in news %}
+		<a href="/knowledge/{{ new.id }}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+		   <!-- <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0"> -->
+		   <div class="d-flex gap-2 w-100 justify-content-between">
+			 <div>
+			   <h6 class="mb-0">{{ new.title }}<p>
+			   <p class="mb-0 opacity-75">{{ new.spare }}....</p>
+			 </div>
+			 <small class="opacity-50 text-nowrap">阅读{{ new.readtimes }}次</small>
+		   </div>
+		 </a>
+		 {% endfor %}
+		 
 	</div>
 
 </div>
