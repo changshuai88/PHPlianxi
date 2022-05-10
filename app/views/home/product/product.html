@@ -1,7 +1,7 @@
 {% include "public/header.html" %}	
 
 <!-- 最新产品 -->
-<div class="container product">
+<div class="container ">
 	<!-- 最新产品标题 -->
 	<div class="row ptitle">
 		<div class="col-12 text-center"><strong>---&nbsp;最新<span>产品</span>&nbsp;---</strong></div>
@@ -18,9 +18,18 @@
 		</div>
 		{% endfor %}
 		
+		
 	</div>
+	<div class="col-12">
+		<nav aria-label="navigation">
+		{% autoescape false%}
+		{{ fpage }}
+		{% endautoescape %}
+		</nav>
+	</div>
+	
 </div>
 
-
+		
 
 {% include "public/footer.html" %}

@@ -1,15 +1,28 @@
 <?php
 namespace home;
 use models\basedao;
+use JasonGrimes\Paginator;
 
 class Product extends Home{
     function index(){
 
         $db = new BaseDao();
         $db->query("set names utf8");
+
+        $num = $_GET['num'] ?? 1;
+        $totalItems = $db->count('goods');
+        $itemsPerPage = PNUM;
+        $currentPage = $num;
+        $urlPattern = '/product?num=(:num)';
+
+        $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
         
-        $goods = $db->select("goods","*",['ORDER'=>['id'=>'DESC'],'LIMIT'=>[0,8]]);
+        $start = ($currentPage-1) * $itemsPerPage;
+
+        $goods = $db->select("goods","*",['ORDER'=>['id'=>'DESC'],'LIMIT'=>[$start,$itemsPerPage]]);
         // dd($goods);
+
+        $this->assign('fpage',$paginator);
         $this->assign('goods',$goods);
         $this->assign('title','产品中心');
         $this->display("product/product");

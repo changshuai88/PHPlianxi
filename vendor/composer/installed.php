@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '585064b9167960f96ecca7e9a0ea68c8cadbbab1',
+        'reference' => 'd83f98be038bcf387d1872871f23d6ddfaa531a3',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '585064b9167960f96ecca7e9a0ea68c8cadbbab1',
+            'reference' => 'd83f98be038bcf387d1872871f23d6ddfaa531a3',
             'dev_requirement' => false,
         ),
         'catfan/medoo' => array(
@@ -35,6 +35,15 @@
             'install_path' => __DIR__ . '/../gregwar/captcha',
             'aliases' => array(),
             'reference' => '4bb668e6b40e3205a020ca5ee4ca8cff8b8780c5',
+            'dev_requirement' => false,
+        ),
+        'jasongrimes/paginator' => array(
+            'pretty_version' => '1.0.3',
+            'version' => '1.0.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../jasongrimes/paginator',
+            'aliases' => array(),
+            'reference' => '3411e3cd0c6479a0b514f26e4358f0273552f221',
             'dev_requirement' => false,
         ),
         'noahbuscher/macaw' => array(
