@@ -38,20 +38,21 @@
 
             if($title && $date && $article){
                 $db->insert('news',["title"=>$title,"date"=>$date,"article"=>$article,'spare'=>$note,'readtimes'=>0]);
-                   
+                   $this->success('/admin/news',"文章添加成功！");
                 //    $brands = $db->insert("model",["pid"=>$id,"name"=>$name,"ord"=>0]);
                     // success('brand/index',"添加成功");
-                    echo "<script>";
-                    echo "alert('添加成功');";
-                    //添加完毕后跳转到指定页面
-                    echo "location.href='http://lianxi.com/admin/add_news';";
-                    echo "</script>";
+                    // echo "<script>";
+                    // echo "alert('添加成功');";
+                    // //添加完毕后跳转到指定页面
+                    // echo "location.href='http://lianxi.com/admin/add_news';";
+                    // echo "</script>";
                 }else{
-                    echo "<script>";
-                    echo "alert('您未添加任何东西');";
-                    //添加失败后跳转到指定页面
-                    echo "location.href='http://lianxi.com/admin/add_news';";
-                    echo "</script>";
+                    $this->error("/admin/add_news","文章添加失败！");
+                    // echo "<script>";
+                    // echo "alert('您未添加任何东西');";
+                    // //添加失败后跳转到指定页面
+                    // echo "location.href='http://lianxi.com/admin/add_news';";
+                    // echo "</script>";
                 }
         }
 
