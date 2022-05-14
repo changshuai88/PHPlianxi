@@ -99,18 +99,21 @@ class Brand extends Admin{
         if(@$_POST["name"]){
             $name = $_POST["name"];
             $brands = $db->insert("model",["pid"=>$id,"name"=>$name,"ord"=>0]);
+
+            $this->success("/admin/brand","添加成功！");
             // success('brand/index',"添加成功");
-            echo "<script>";
-            echo "alert('添加成功');";
-            //添加完毕后跳转到指定页面
-            echo "location.href='http://lianxi.com/admin/brand';";
-            echo "</script>";
+            // echo "<script>";
+            // echo "alert('添加成功');";
+            // //添加完毕后跳转到指定页面
+            // echo "location.href='http://lianxi.com/admin/brand';";
+            // echo "</script>";
         }else{
-            echo "<script>";
-            echo "alert('您未添加任何东西');";
-            //添加失败后跳转到指定页面
-            echo "location.href='http://lianxi.com/admin/brand';";
-            echo "</script>";
+            $this->error("/admin/brand","您未添加任何东西！");
+            // echo "<script>";
+            // echo "alert('您未添加任何东西');";
+            // //添加失败后跳转到指定页面
+            // echo "location.href='http://lianxi.com/admin/brand';";
+            // echo "</script>";
         }
         // $this->display("brand/index");
         
@@ -123,16 +126,18 @@ class Brand extends Admin{
 
         $product = $db->select("product",["name"],["mid"=>$id]);
         if($product){
-            echo "<script>";
-            echo "alert('ERROR:{'本机型下有产品不能删除'}');";
-            echo "location.href='http://lianxi.com/admin/brand';";
-            echo "</script>";
+            $this->error("/admin/brand","本机型下有产品不能删除!");
+            // echo "<script>";
+            // echo "alert('ERROR:{'本机型下有产品不能删除'}');";
+            // echo "location.href='http://lianxi.com/admin/brand';";
+            // echo "</script>";
         }else{
             $db->delete('model',['id'=>$id]);
-            echo "<script>";
-            echo "alert('删除成功');";
-            echo "location.href='http://lianxi.com/admin/brand';";
-            echo "</script>";
+            $this->success("/admin/brand","删除成功!");
+            // echo "<script>";
+            // echo "alert('删除成功');";
+            // echo "location.href='http://lianxi.com/admin/brand';";
+            // echo "</script>";
         };  
     }
 

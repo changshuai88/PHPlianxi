@@ -18,6 +18,7 @@
     Macaw::post('/admin/update_goods','admin\Product@update_goods');
     Macaw::get('/admin/product_show/(:num)','admin\Product@product_show');
     Macaw::get('/admin/delgoods/(:num)','admin\Product@delgoods');
+    Macaw::get('/admin/product/edit/(:num)','admin\Product@product_edit');
 
 
 
@@ -66,6 +67,8 @@
     // 产品展示页面
     Macaw::get('/product','home\Product@index');
     Macaw::get('/good/(:num)','home\Product@good');
+    // edit good 
+    
     Macaw::post('/search','home\Product@search');
 
 

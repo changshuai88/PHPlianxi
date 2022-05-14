@@ -138,6 +138,78 @@
 
         }
 
+        function product_edit($id){
+            $db = new BaseDao();
+            $db->query("set names utf8");
+            $brands = $db->select("model",["pid","name","id","ord"]);
+            //遍历$btands,生成二维数组。$newarr       
+            foreach($brands as $k => $v){
+                if($v['pid']== 0){
+                    $newarr[$v['id']]= $v; 
+                }elseif(isset($brands[$v["pid"]])){
+                    $newarr[$v['pid']]['son'][] = $v;
+                }
+            }
+            $product = $db->select("goods","*",['id'=>$id]);
+            // dd($product);
+            $this->assign('product',$product[0]);
+            $this->assign('title',"产品管理");
+            $this->assign('brands',$newarr);
+            $this->display("product/edit_good");
+        }
+
+        function update_edit_goods($id){
+            $db = new BaseDao();
+            $db->query("set names utf8");
+            
+            // print_r($_POST);
+            $name = @$_POST["goods_name"];
+            $partno = @$_POST["goods_num"];
+            $price = @$_POST["goods_pri"];
+            $weight =@$_POST["goods_weight"];
+            $date = @$_POST["goods_addtime"];
+            $bid= @$_POST["goods_bid"];
+            $mid = @$_POST["goods_mid"];
+            $note = @$_POST["note"];
+
+        
+            $imageName = $_POST["goods_name"].$_POST["goods_num"];
+            // print_r($imageName);
+            $imageurl = upload('image',"uploads/goods",$imageName);
+
+            // print_r($imageurl);
+            // $upfile = $_FILES;
+            // print_r($_FILES);
+            // $goods = [];
+           
+            // 向数据库添加数据
+            if($db->insert('goods',[
+                'name'=>$name,
+                'partno'=>$partno,
+                'price'=>$price,
+                'weight'=>$weight,
+                'date'=>$date,
+                'bid'=>$bid,
+                'mid'=>$mid,
+                'note'=>$note,
+                'image'=>$imageurl,
+                'readtime'=>0
+                ])){
+                // echo $imageurl;
+                $this->success("add_goods","添加成功");
+            }else{
+                $this->error("add_goods","添加失败");
+            }
+
+            // $brand = $update->select("brand",["id","name"]);
+            // $model = $update->select("model",["pid","name"]);       
+
+            // $this->assign('model',$model);
+            // $this->assign('brand',$brand);
+            // $this->display("product/product");
+
+        }
+
 
 
        
