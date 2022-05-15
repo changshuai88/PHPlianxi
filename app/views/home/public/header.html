@@ -3,8 +3,9 @@
 <head>
    <meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-   <title>平地机配件->{{ title }}</title>
+	<meta name="description" content="天津沃泰机械贸易有限公司，有着多年的贸易出口经验和丰富的国内供应渠道。主打：天工全系列工程机械及相关配件，三一平地机配件，徐工全系列工程机械及相关配件，山推、彭浦推土机配件，上柴、潍柴、玉柴发动机配件，柳工、临工、厦工装载机配件。天工平地机等天工机械的各种配件：油缸、斗齿、刀板、齿圈、桥壳、铜套、涡轮箱、液压锁、车灯、电脑版、拉线、制动总泵和分泵、拉杆和球头、轮胎，平衡箱及内部各种配件。 {{good.name}}{{good.partno}}" />
+	<meta name="keywords" content="{{good.name}}{{good.partno}}平地机配件 天工配件 徐工配件" />
+   <title>平地机配件->{% if good %}{{ good.name }}->{{ good.partno }}{% else %}{{ title }}{% endif %}</title>
    <link rel="shortcut icon" href="{{ res }}/ico.png" type="image/x-icon" />	
    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">  
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
