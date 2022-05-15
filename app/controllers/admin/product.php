@@ -168,45 +168,53 @@
             $price = @$_POST["goods_pri"];
             $weight =@$_POST["goods_weight"];
             $date = @$_POST["goods_addtime"];
-            $bid= @$_POST["goods_bid"];
-            $mid = @$_POST["goods_mid"];
             $note = @$_POST["note"];
 
-        
+            // 如果有上传文件就上传图片
+            if(@$_FILES['image']){
             $imageName = $_POST["goods_name"].$_POST["goods_num"];
-            // print_r($imageName);
             $imageurl = upload('image',"uploads/goods",$imageName);
-
-            // print_r($imageurl);
-            // $upfile = $_FILES;
-            // print_r($_FILES);
-            // $goods = [];
            
-            // 向数据库添加数据
-            if($db->insert('goods',[
+            if($db->update('goods',[
                 'name'=>$name,
                 'partno'=>$partno,
                 'price'=>$price,
                 'weight'=>$weight,
                 'date'=>$date,
-                'bid'=>$bid,
-                'mid'=>$mid,
                 'note'=>$note,
                 'image'=>$imageurl,
-                'readtime'=>0
-                ])){
+                
+            ],['id'=>$id])){
                 // echo $imageurl;
-                $this->success("add_goods","添加成功");
+                $this->success("/admin/product","修改成功");
+                // echo "11";
+
             }else{
-                $this->error("add_goods","添加失败");
+                $this->error("/admin/product","修改失败");
             }
+        
+        }else{
 
-            // $brand = $update->select("brand",["id","name"]);
-            // $model = $update->select("model",["pid","name"]);       
+            
+           
+            // 向数据库添加数据
+            if($db->update('goods',[
+                'name'=>$name,
+                'partno'=>$partno,
+                'price'=>$price,
+                'weight'=>$weight,
+                'date'=>$date,
+                'note'=>$note,
+            ],['id'=>$id])){
+                // echo $imageurl;
+                $this->success("/admin/product","修改成功");
+                // echo "11";
+            }else{
+                $this->error("/admin/product","修改失败");
+            }
+        }
 
-            // $this->assign('model',$model);
-            // $this->assign('brand',$brand);
-            // $this->display("product/product");
+           
 
         }
 
