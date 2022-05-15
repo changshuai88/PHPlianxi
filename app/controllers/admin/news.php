@@ -61,17 +61,20 @@
             $db->query("set names utf8");
 
             if($db->delete("news",["id"=>$id])){
-                echo "<script>";
-                echo "alert('删除成功');";
-                //添加完毕后跳转到指定页面
-                echo "location.href='http://lianxi.com/admin/news';";
-                echo "</script>";
+                $this->success("/admin/news","文章删除成功！");
+                // echo "<script>";
+                // echo "alert('删除成功');";
+                // //添加完毕后跳转到指定页面
+                // echo "location.href='http://lianxi.com/admin/news';";
+                // echo "</script>";
             }else{
-                echo "<script>";
-                echo "alert('删除失败');";
-                //添加完毕后跳转到指定页面
-                echo "location.href='http://lianxi.com/admin/news';";
-                echo "</script>";
+                $this->error("/admin/news","文章删除失败！");
+
+                // echo "<script>";
+                // echo "alert('删除失败');";
+                // //添加完毕后跳转到指定页面
+                // echo "location.href='http://lianxi.com/admin/news';";
+                // echo "</script>";
             }
         }
 
