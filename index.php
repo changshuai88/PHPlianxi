@@ -77,6 +77,11 @@
     Macaw::get('/repaire','home\Repaire@index');
     Macaw::get('/knowledge/(:num)','home\Repaire@knowledge');
 
+    //小工具页面
+    Macaw::get('/tool','home\Tool@index');
+    Macaw::get('/tool/phpinfo','home\Tool@phpinfo');
+
+
 
     
 
